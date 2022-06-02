@@ -15,6 +15,7 @@
                 <th>Categoria</th>
                 <th>imagen</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +26,8 @@
                 <td>{{ c.precio }}</td>
                 <td>{{ c.categoria }}</td>
                 <td>{{ c.imagen }}</td>
-                <td></td>
+                <td><a href="#" class="btn btn-info">Editar</a></td>
+                <td><a href="#" class="btn btn-info">Eliminar</a></td>
             </tr>
             {% endfor %}
         </tbody>

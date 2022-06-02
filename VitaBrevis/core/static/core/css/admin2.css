@@ -1355,3 +1355,9 @@ p{
     font-size: 14px;
     opacity: 1;
 }
+
+
+.texto_largo{
+    position: relative;
+    font-size: 1px;
+}
