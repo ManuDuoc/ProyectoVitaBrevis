@@ -1,0 +1,2064 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,200&family=Poppins:ital,wght@1,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nova+Slim&display=swap');
+
+:root {
+    --color-primary: #7380ec;
+    --color-danger: #ee2838;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132,139,200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #212529;
+    --color-icono:rgb(241, 224, 224);
+    --color-body:#161515;
+  
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+  
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+  
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* --------------------- VARIEABLES OSCURAS -------------------------- */
+.dark-theme-variables{
+    --color-background: #25c078;
+    --color-white: #0f1011;
+    --color-dark: #edeffd;
+    --color-icono: #161515;
+    --color-light: rgba(0,0,0,0.4);
+    ---box-shadow: 0 2rem 3rem blue;
+    --color-body: white;
+    
+}
+
+.theme-toggler {
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+    margin-top: 0.5rem;
+    margin-left: 13px;
+}
+
+.color{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.theme-toggler span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggler span.active{
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+.theme-toggler2 {
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 3.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+    margin-left: 1.3rem;
+}
+
+.theme-toggler2 span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggler2 span.active{
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+body{
+    background-color: var(--color-body);
+    width: 100vw;
+    height: 100vh;
+    font-family: poppins, sans-serif;
+    font-size: 0.76rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+}
+
+body, html {
+	line-height: 1.8;
+    font-family: 'Roboto', sans-serif;
+     color: #555e58;
+	 text-transform:capitalize;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	 font-weight: 400;
+	 margin:0px;
+     padding:0px;
+}
+
+small{
+    font-size: 0.75rem;
+}
+
+
+
+
+p {
+	font-size: 15px;
+	margin: 12px 0 0;
+	line-height: 24px;
+}
+
+
+
+a{
+	color: #333;
+	font-weight: 400;
+}
+
+button:focus{
+	box-shadow:none;
+	outline:none;
+	border:none;
+}
+
+button{
+	cursor:pointer;
+}
+
+ul, ol {
+	padding: 0;
+	margin:0px;
+		list-style: none;
+}
+
+a:hover{
+    color: var(--color-primary);
+}
+
+.desactive a.sidebar:hover{
+    margin-left: 1rem;
+}
+
+
+a,
+a:hover,
+a:focus {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.danger{
+    color: var(--color-danger);
+}
+.success{
+    color: var(--color-success);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+/*=======================================================
+  material-icons  copy & paste form site google material-icons
+  ==================================================*/
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+*{
+    box-sizing: border-box;
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/*=======================================================
+  material-icons  copy & paste form site google material-icons
+  ==================================================*/
+
+
+
+.wrapper {
+	position: relative;
+    width:100%;
+	overflow:auto;
+}
+
+
+
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE start
+----------------------------------------------------- */
+
+
+
+#sidebar {
+    position:fixed;
+	height:100vh!important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index:11;
+    width: 260px;
+	overflow:auto;
+	transition:all 0.3s ;
+    background: var(--color-background);
+    box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+
+#sidebar::-webkit-scrollbar{
+	width:5px;
+	border-radius:10px;
+	background-color:rgb(255, 255, 255);
+	display:none;
+}
+#sidebar::-webkit-scrollbar-thumbs{
+	width:5px;
+	border-radius:10px;
+	background-color:#333;
+	display:none;
+}
+
+
+#sidebar:hover::-webkit-scrollbar{
+	display:block;
+}
+#sidebar:hover::-webkit-scrollbar-thumbs{
+	display:block;
+}
+
+#sidebar .sidebar-header {
+    padding:20px;
+	background-color:var(--color-background);
+	border-bottom:1px solid #eee;
+}
+
+.sidebar-header h3{
+	color:#333;
+	font-size:17px;
+	margin:0px;
+	text-transform:uppercase;
+	transition:all 0.5s ease;
+	font-weight:600;
+}
+
+.sidebar-header h3 img{
+	width:45px;
+	margin-right:10px;
+}
+
+#sidebar ul li{
+	padding:2px 7px;
+}
+
+#sidebar ul li.active>a{
+    color: #333;
+    background-color: rgba(200, 200, 200, 0.2);
+}
+
+#sidebar ul li a:hover{
+    color: #333;
+    background-color: rgba(200, 200, 200, 0.2);
+}
+
+.dropdown-toggle::after {
+    position: absolute;
+    right: 10px;
+    top: 23px;
+}
+
+#sidebar ul li.drodown{
+	position:sticky;
+}
+
+
+#sidebar ul.components {    
+    padding: 20px 0;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+	line-height: 30px;
+	border-radius:5px;
+    font-size: 15px;
+	position:relative;
+    font-weight: 400;
+    display: block;
+}
+
+#sidebar ul li a span{
+	text-transform:capitalize;
+	display:inline-block;
+    color: var(--color-white);
+}
+
+#sidebar ul li a i {
+    position: relative;
+    margin-right: 10px;
+    top: 5px;
+	color: var(--color-white);
+    margin-left: 10px;
+}
+
+
+
+
+
+/* ---------------------------------------------------
+   sidebar end
+----------------------------------------------------- */
+
+
+
+
+/*=======================================================
+   main-content navbar-design start
+   ===============================================*/
+
+
+
+#content {
+	position: relative;
+    transition: all 0.3s;
+	background-color: #EEEEEE;
+}
+
+.top-navbar{
+	width:100%;
+	z-index:9;
+	position:relative;
+}
+
+.division main{
+    width: 100%;
+}
+
+.main-content{
+	padding:10px 20px 0px 20px;
+	position: relative;
+    width: 100%;
+    background-color: var(--color-body);
+}
+
+
+
+.navbar{
+    background-color: var(--color-background);
+    color: #FFFFFF;
+}
+
+.navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar button{
+	background-color:transparent;
+	border:none;
+}
+.navbar button span{
+	color:#fff;
+}
+
+#sidebarCollapse{
+	border-radius:50%;
+	width:45px;
+	height:45px;
+	text-align:center;
+	line-height:45px;
+	margin-right:20px;
+	border:none;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+#sidebarCollapse span {
+    margin: 9px;
+    padding: 0px;
+}
+
+
+
+.navbar-nav > li.active{
+   color: #FFFFFF;
+   border-radius:4px;
+    background-color: rgba(0, 0, 0, 0.08);  
+ }
+
+.navbar-nav > li > a {
+    color: #FFFFFF;
+}
+
+
+.notification {
+    position: absolute;
+    top: 1rem;
+    right: 23px;
+    display: block;
+    font-size: 1px;
+    border: 0px;
+    font-size: 10px;
+    background: #d9534f;
+    min-width: 15px;
+    text-align: center;
+    padding: 1px 5px;
+    height: 20px;
+    border-radius: 2px;
+    line-height: 14px;
+} 
+
+#sidebar a{
+    color: var(--color-white);
+    font-size: 1px;
+}
+
+
+ .navbar-nav > li.show .dropdown-menu {
+    transform: translate3d(0, 0, 0);
+	opacity:1;
+	visibility:visible;
+}
+
+
+.dropdown-menu li > a {
+    font-size: 13px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 2px;
+	font-weight: 400;
+    transition: all 150ms linear;
+}
+
+.navbar-nav > .active > a:focus {
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+
+.navbar-nav li a {
+    position: relative;
+    display: block;
+    padding: 10px 15px!important;
+}
+
+/*=======================================================
+   main-content navbar-design end
+   ===============================================*/
+
+
+
+/*=======================================================
+   main-content navbar-design start
+   ===============================================*/
+
+
+/*=======================================================
+   main-content inner design like card start
+   ===============================================*/
+
+
+.card {
+    margin: 10px 0;
+}
+
+.card {
+    border-radius: 0px!important;
+}
+
+.card {
+    display: inline-block;
+    position: relative;
+	border:none!important;
+    width: 100%;
+    margin:15px 0;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+    border-radius: 6px;
+    color: rgba(0,0,0, 0.87);
+    background: #fff;
+}
+
+.card-stats .card-header {
+    float: left;
+    text-align: center;
+}
+
+.card .card-header {
+    padding: 15px 20px 0;
+    z-index: 3;
+	background-color:#fff!important;
+	border-bottom:none;
+}
+
+.card .card-footer .stats .material-icons {
+    position: relative;
+    top: 4px;
+    font-size: 16px;
+}
+
+.card-stats .card-header span {
+    font-size: 36px;
+    line-height: 56px;
+    width: 56px;
+    height: 56px;
+}
+
+.icon.icon-warning {
+    color: #ff9800;
+}
+
+.icon.icon-rose {
+    color: #e91e63;
+}
+.icon.icon-success {
+    color: #4caf50;
+}
+.icon.icon-info {
+    color: #00bcd4;
+}
+.card .card-footer {
+    margin: 0 7px 0px;
+    padding-top: 10px;
+	background-color:#fff;
+    border-top: 1px solid #eeeeee;
+}
+
+.text-info {
+    color: #03A9F4!important;
+}
+
+.card-stats .card-content {
+    text-align: right;
+    padding-top: 10px;
+}
+
+.card .card-content {
+    padding: 15px 20px;
+    position: relative;
+}
+
+.card .card-content .category {
+    margin-bottom: 0;
+}
+.card .category:not([class*="text-"]) {
+    color: #555555;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card .card-title:not(.card-calendar .card-title) {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.card-stats .card-title {
+    margin: 0;
+}
+
+.card .card-footer .stats {
+    line-height: 22px;
+    color: #555555;
+    font-size: 15px;
+}
+
+.card .card-footer div {
+    display: inline-block;
+}
+
+.card .card-header-text h4{
+    margin-top: 0;
+    margin-bottom: 3px;
+	font-size:19px;
+    font-weight: 400;
+	color: #222222;
+    text-decoration: none;
+	
+}
+
+.table > thead > tr > th {
+    border-bottom-width: 1px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.card .card-content {
+    padding: 15px 20px;
+    position: relative;
+}
+
+.streamline .sl-primary {
+    border-left-color: #188ae2;
+}
+
+.streamline .sl-item {
+    position: relative;
+    padding-bottom: 12px;
+    border-left: 1px solid #ccc;
+}
+
+
+
+.streamline .sl-item:before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    background-color: #ccc;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+}
+.streamline .sl-primary:before, .streamline .sl-primary:last-child:after {
+    background-color: #188ae2;
+}
+
+
+.streamline .sl-danger:before, .streamline .sl-danger:last-child:after {
+    background-color: #ff5b5b;
+}
+
+.streamline .sl-success {
+    border-left-color: #10c469;
+}
+
+.streamline .sl-success:before, .streamline .sl-success:last-child:after {
+    background-color: #10c469;
+}
+
+.streamline .sl-warning {
+    border-left-color: #f9c851;
+}
+
+.streamline .sl-warning:before, .streamline .sl-warning:last-child:after {
+    background-color: #f9c851;
+}
+
+
+
+.streamline .sl-danger {
+    border-left-color: #ff5b5b;
+}
+.streamline .sl-item .sl-content {
+    margin-left: 24px;
+}
+
+.streamline .sl-item .text-muted {
+    color: inherit;
+    opacity: .6;
+	font-size:12px;
+}
+
+.streamline .sl-item p {
+	font-size:14px;
+	color:#333;
+}
+
+
+/*=======================================================
+   main-content inner design like card end
+   ===============================================*/
+
+
+
+/*=============================================
+  footer design start
+  =========================================*/
+ 
+.footer {
+    border-top: 1px solid #e7e7e7;
+}
+
+footer {
+    padding: 10px 0;
+	position:relative;
+	width:100%;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+footer ul li a {
+    color: inherit;
+    padding: 15px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+}
+
+
+footer .copyright {
+    padding: 15px;
+	font-size:14px;
+    margin: 0;
+}
+
+
+/*=============================================
+  footer design end
+  =========================================*/
+  
+
+
+#sidebar.show-nav,.body-overlay.show-nav{
+	transform:translatex(0%);
+	opacity:1;
+	display:block;
+	visibility:visible;
+	z-index:15;
+}
+
+
+
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media only screen and (min-width:992px){
+	#sidebar.active {
+    width:80px;
+	height:100%!important;
+	position:absolute!important;
+	overflow:visible!important;
+	top:0!important;
+	z-index:666;
+	float:left!important;
+    bottom: 0!important;
+}
+
+
+#sidebar.active .sidebar-header h3 span {
+   display:none;
+   transition:all 0.5s ease;
+}
+
+#sidebar.active ul li a span{
+    display:none;
+	transition:all 0.5s ease;
+}
+
+#sidebar.active .dropdown-toggle::after {
+    display:none;
+	transition:all 0.5s ease;
+}
+
+
+
+#content {
+    width: calc(100% - 260px);
+    position: relative;
+    float: right;
+    transition: all 0.3s;
+    background-color: #EEEEEE;
+}  
+
+#content.active {
+    width: calc(100% - 80px);
+} 
+
+#sidebar.active .menu {
+    position: absolute;
+    left: 81px;
+    background-color: var(--color-background);
+    width: 200px;
+    height: auto;
+    margin: 5px 0;
+    top: 13.3rem;
+    border: 1px solid var(--color-body);
+    z-index: 4;
+}   
+
+#sidebar.active .menu a{
+    font-size: 10px;
+}
+}
+
+
+@media only screen and (min-width:992px){
+.dropdown-menu {
+    border: 0;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+	transform: translate3d(0, -20px, 0);
+    visibility: hidden;
+	transition: all 150ms linear;
+    display: block;
+	min-width:15rem;
+	right: 0;
+    left: auto;
+    opacity: 0;
+}
+}
+
+
+/*===============small-screen overlay sidebar design media queries==============*/
+
+@media only screen and (max-width:992px){
+#sidebar {
+    position:fixed;
+    top: 0;
+    bottom:0;
+    z-index: 10;
+    width: 260px;
+	transform:translatex(-100%);
+	transition: all 150ms linear;
+	box-shadow:none!important;
+}	
+
+.body-overlay{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	visibility:hidden;
+	opacity:0;
+	z-index:3;
+	transition: all 150ms linear;
+	background-color:rgba(0,0,0,0.5);
+}
+
+.notification {
+    position: absolute;
+    top: 1rem;
+    right: 23px;
+    display: block;
+    font-size: 1px;
+    border: 0px;
+    font-size: 10px;
+    background: #d9534f;
+    min-width: 15px;
+    text-align: center;
+    padding: 1px 5px;
+    height: 20px;
+    border-radius: 2px;
+    line-height: 14px;
+} 
+}
+/*===============small-screen overlay sidebar design media queries==============*/
+
+
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+
+
+main{
+  margin-top: 1.4rem;
+  background: var(--color-background);
+}
+
+main .date{
+  display: inline-block;
+  background: rgb(0 0 0 / 9%);
+  border-radius: var(--border-radius-1);
+  margin-top: 1rem;
+  padding: 0.5rem 1.6rem;
+}
+
+main  .date input[type ="date"]{
+  background: transparent;
+  color: white;
+}
+
+main .insights{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+main .insights > div {
+  background: var(--color-body);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+main .insights > div:hover{
+  box-shadow: none;
+}
+
+main .insights > div span{
+  background: var(--color-primary);
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 2rem;
+}
+
+main .insights > div.expenses span {
+  background: var(--color-danger);
+}
+
+main .insights > div.income span {
+  background: var(--color-success);
+}
+
+main .insights > div .middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .insights h3 {
+  margin: 1rem 0 0.6rem;
+  font-size: 1rem;
+}
+
+main .insights .progress{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+main .insights svg{
+  width: 7rem;
+  height: 7rem;
+}
+
+main .insights svg circle {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+  
+}
+
+main .insights .sales svg circle{
+  stroke-dashoffset: -30;
+  stroke-dasharray: 200;
+}
+
+main .insights .expenses svg circle{
+  stroke-dashoffset: 20;
+  stroke-dasharray: 80;
+}
+
+main .insights .income svg circle{
+  stroke-dashoffset: 35;
+  stroke-dasharray: 110;
+}
+
+main .insights .progress .number{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .insights small {
+  margin-top: 1.6rem;
+  display: block;
+  
+}
+
+main .recent-orders{
+    margin-top: 2rem;
+
+}
+
+main .recent-orders h2{
+    margin-bottom: 0.8rem;
+    
+}
+
+main .recent-orders table{
+    background: var(--color-body);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+main .recent-orders table:hover{
+    box-shadow: none;
+}
+
+main table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+main table tbody tr:last-child td{
+    border: none;
+}
+
+main .recent-orders a{
+    text-decoration-line: center;
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary) ;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--color-white);
+}
+h2{
+    font-size: 1.4rem;
+    color: white;
+}
+
+.dashboard{
+    color: white;
+}
+
+h3{
+    font-size: 0.87rem;
+    color: var(--color-white);
+}
+
+h4{
+    font-size: 0.8rem;
+    color: var(--color-white);
+}
+
+h5{
+    font-size: 0.77rem;
+    color: var(--color-white);
+}
+
+p{
+    color: var(--color-white);
+}
+/* =============== Espacio Derecho ================= */
+.right{
+    margin-top: 1.4rem;
+    margin-right: 0.8rem;
+    background: rgba(255, 0, 0, 0) !important;
+}
+
+.right .top{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right .top button {
+    display:none;
+}
+
+.right .theme-toggler {
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+.right .theme-toggler span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress span{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.right .theme-toggler span.active{
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+.right .top .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+/* =============== Cambios Recientes ================= */
+.right .recent-updates {
+    margin-top: 1rem;
+}
+
+.right .recent-updates h2{
+    margin-bottom: 0.8rem;
+}
+
+.right .recent-updates .updates{
+    background: var(--color-body);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.right .recent-updates .updates:hover{
+    box-shadow: none;
+}
+
+.right .recent-updates .update{
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ---------------------Datos del analytics-------------------------- */
+.right .sales-analytics{
+    margin-top: 2rem;
+}
+
+.right .sales-analytics h2{
+    margin-bottom: 0.8rem;
+}
+
+.right .sales-analytics .item {
+    background: var(--color-body);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.right .sales-analytics .item:hover{
+    box-shadow: none;
+}
+
+.right .sales-analytics .item .right{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0;
+    width: 100%;
+}
+
+.right .sales-analytics .item .icon{
+    padding: 0.6rem;
+    color: var(--color-white);
+    border-radius: 50%;
+    background: var(--color-primary);
+    display: flex;
+}
+
+.right .sales-analytics .item.offline .icon{
+    background: var(--color-danger);
+}
+
+.right .sales-analytics .item.customers .icon {
+    background: var(--color-success);
+}
+
+.right .sales-analytics .add-product{
+    background: transparent;
+    border: 2px dashed var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right .sales-analytics .add-product div {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.right .sales-analytics .add-product div h3 {
+    font-weight: 600;
+}
+/* --------------------- @media -------------------------- */
+@media screen and (max-width: 1370px) {
+    .division{
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+    aside .logo h2{
+        display: none;
+    }
+
+    aside .sidebar h3 {
+        display: none;
+    }
+    aside .sidebar a{
+        width: 5.6rem;
+    }
+    aside .sidebar a:last-child{
+        position: relative;
+        margin-top: 1.8rem;
+    }
+    main .insights {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    main .recent-orders{
+        width: 97%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-63%);
+        margin: 1em 0 0 8.8rem;
+    }
+
+    main .recent-orders table{
+        width: 97%;
+    }
+    main table thead tr th:last-child,
+    main table thead tr th:first-child{
+        display: none;
+    }
+    main table tbody tr td:last-child,
+    main table tbody tr td:first-child{
+        display: none;
+    }
+
+    aside .logo img{
+        width: 2rem;
+        height: 2rem;
+        margin-left: 2.3rem;
+    }
+}
+
+
+
+
+.division{
+    display: flex;
+    gap: 10px;
+    background: var(--color-background);
+}
+
+.right .item.offline {
+    background: var(--color-body);
+}
+
+.right{
+    background: var(--color-body);
+}
+
+.updates img{
+    display: block;
+    width: 100%;
+}
+
+.profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-64%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 97%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-64%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 96%;
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-66%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 96%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-65%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 953px) {
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-66%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .division{
+        display: block;
+    }
+
+    #content{
+        background: var(--color-background);
+    }
+    .right{
+        margin-top: 400px;
+        width: 97%;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-67%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 825px) {
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-68%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 779px) {
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-69%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 738px) {
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-70%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 700px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-71%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 669px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-72%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 637px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-73%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 609px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-74%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 584px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-75%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 560px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-76%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 540px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-76%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 539px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-77%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 519px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-78%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 505px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-75%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-76%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-77%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 460px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-78%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-80%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 93%;
+    }
+}
+
+@media screen and (max-width: 445px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-81%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 93%;
+    }
+}
+
+@media screen and (max-width: 431px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-82%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 93%;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-83%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 93%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-84%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 412px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-85%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 411px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-84%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 93%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-83%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width: 393px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-86%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 392px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-86%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 387px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-85%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+@media screen and (max-width: 375px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-88%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:100%;
+    }
+}
+
+
+
+@media screen and (max-width: 374px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-85%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+@media screen and (max-width: 370px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-86%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-89%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:100%;
+    }
+}
+
+@media screen and (max-width: 359px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-87%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-88%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+
+@media screen and (max-width: 345px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-89%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+
+@media screen and (max-width: 335px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-91%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-93%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+
+@media screen and (max-width: 308px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-95%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-97%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:90%;
+    }
+}
+
+@media screen and (max-width: 285px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-95%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:84%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-101%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:100%;
+    }
+}
+
+
+@media screen and (max-width: 275px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-98%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:84%;
+    }
+}
+
+@media screen and (max-width: 265px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-102%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:80%;
+    }
+}
+
+@media screen and (max-width: 260px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-103%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:80%;
+    }
+}
+
+@media screen and (max-width: 255px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-105%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:80%;
+    }
+}
+
+@media screen and (max-width: 245px) {
+
+    main .recent-orders{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-106%);
+        margin: 1em 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width:80%;
+    }
+}
+
+
+
