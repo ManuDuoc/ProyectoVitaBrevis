@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Producto
 
 # Create your views here.
 
@@ -29,8 +30,9 @@ def terror(request):
 def administrador(request):
     return render(request,'core/administrador.html')    
 
-def añadirjuego(request):
-    return render(request,'core/añadirjuego.html')
+def anadirjuego(request):
+    Productos = Producto.objects.all()
+    return render(request,'core/anadirjuego.html',{"Productos": Productos})
 
 
 def juego(request):

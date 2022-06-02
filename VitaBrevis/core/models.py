@@ -36,8 +36,12 @@ class Producto(models.Model):
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE,null=True)
     imagen = models.ImageField(upload_to="juegos", null=True)
     descripcion = models.TextField(null=True)
-    masInfo1 = models.TextField(null=True,verbose_name = 'Mas Informacion del Juego 1')
-    masInfo2 = models.TextField(null=True,verbose_name = 'Mas Informacion del Juego 2')
-    masInfo3 = models.TextField(null=True,verbose_name = 'Mas Informacion del Juego 3')
-    masInfo4 = models.TextField(null=True,verbose_name = 'Mas Informacion del Juego 4')
-    masInfo5 = models.TextField(null=True,verbose_name = 'Mas Informacion del Juego 5')
+    masInfo1 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 1')
+    masInfo2 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 2')
+    masInfo3 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 3')
+    masInfo4 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 4')
+    masInfo5 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 5')
+    
+    def __str__(self):
+        texto = "{0} ({1})"
+        return texto.format(self.nombre, self.codigo)
