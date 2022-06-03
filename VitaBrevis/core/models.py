@@ -27,14 +27,14 @@ class Juego(models.Model):
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombrejuego
+        return self.nombreJuego
 
 class Producto(models.Model):
     codigo = models.CharField(primary_key=True, max_length=6)
     nombre = models.CharField(max_length=50)
     precio = models.PositiveSmallIntegerField()
     video = models.CharField(max_length=150,null=True)
-    imagen = models.ImageField(upload_to="juegos", null=True)
+    foto = models.ImageField(upload_to="juegos", null= True)
     descripcion = models.TextField(null=True)
     masInfo1 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 1')
     masInfo2 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 2')

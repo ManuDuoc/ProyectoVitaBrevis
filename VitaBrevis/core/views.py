@@ -1,3 +1,5 @@
+from msilib.schema import File
+from pickle import FALSE
 from django.shortcuts import render, redirect
 from .models import Categoria, Juego, Producto
 from django.contrib import messages
@@ -32,9 +34,10 @@ def administrador(request):
     return render(request,'core/administrador.html')    
 
 def anadirjuego(request):
-    Productos = Producto.objects.all()
-    return render(request,'core/anadirjuego.html',{"Productos": Productos})
-
+    categorias = Categoria.objects.all() #me trae todos los registros de esa tabla (select * from)
+    contexto = {"categoria_m":categorias}
+    return render(request,'core/anadirjuego.html',contexto)
+    
 def listajuegos(request):
     Productos = Producto.objects.all()
     return render(request,'core/listajuegos.html',{"Productos": Productos})
@@ -49,7 +52,7 @@ def registrarjuego(request):
     nombre = request.POST['txtNombre']
     precio = request.POST['txtPrecio']
     categoria_m = request.POST['categoria']
-    imagen = request.POST['fileImagen']
+    f = request.FILES['file']
     video = request.POST['txtVideo']
     descripcion = request.POST['txtDescripcion']
     masInfo1 = request.POST['txtMasInfo1']
@@ -59,7 +62,7 @@ def registrarjuego(request):
     masInfo5 = request.POST['txtMasInfo5']
     categoria_c = Categoria.objects.get(codigo = categoria_m)
 
-    Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, categoria=categoria_c, imagen=imagen, video=video, descripcion=descripcion, masInfo1=masInfo1, masInfo2=masInfo2, masInfo3=masInfo3, masInfo4=masInfo4, masInfo5=masInfo5)
+    Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, categoria=categoria_c, foto=f, video=video, descripcion=descripcion, masInfo1=masInfo1, masInfo2=masInfo2, masInfo3=masInfo3, masInfo4=masInfo4, masInfo5=masInfo5)
     messages.success(request,'Juego Registrado')
     return redirect('/')
 
