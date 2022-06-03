@@ -33,7 +33,7 @@ class Producto(models.Model):
     codigo = models.CharField(primary_key=True, max_length=6)
     nombre = models.CharField(max_length=50)
     precio = models.PositiveSmallIntegerField()
-    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE,null=True)
+    video = models.CharField(max_length=150,null=True)
     imagen = models.ImageField(upload_to="juegos", null=True)
     descripcion = models.TextField(null=True)
     masInfo1 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 1')
@@ -41,6 +41,7 @@ class Producto(models.Model):
     masInfo3 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 3')
     masInfo4 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 4')
     masInfo5 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 5')
+    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE,null=True)
     
     def __str__(self):
         texto = "{0} ({1})"

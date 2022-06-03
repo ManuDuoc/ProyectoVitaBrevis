@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Producto
+from .models import Categoria, Juego, Producto
+from django.contrib import messages
 
 # Create your views here.
 
@@ -34,6 +35,33 @@ def anadirjuego(request):
     Productos = Producto.objects.all()
     return render(request,'core/anadirjuego.html',{"Productos": Productos})
 
+def listajuegos(request):
+    Productos = Producto.objects.all()
+    return render(request,'core/listajuegos.html',{"Productos": Productos})
+
+def listar_Categoria(request):
+    categorias = Categoria.objects.all() #me trae todos los registros de esa tabla (select * from)
+    return render(request,'core/anadirjuego.html',{"categoria_m":categorias})
+
+
+def registrarjuego(request):
+    codigo = request.POST['txtCodigo']
+    nombre = request.POST['txtNombre']
+    precio = request.POST['txtPrecio']
+    categoria_m = request.POST['categoria']
+    imagen = request.POST['fileImagen']
+    video = request.POST['txtVideo']
+    descripcion = request.POST['txtDescripcion']
+    masInfo1 = request.POST['txtMasInfo1']
+    masInfo2 = request.POST['txtMasInfo2']
+    masInfo3 = request.POST['txtMasInfo3']
+    masInfo4 = request.POST['txtMasInfo4']
+    masInfo5 = request.POST['txtMasInfo5']
+    categoria_c = Categoria.objects.get(codigo = categoria_m)
+
+    Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, categoria=categoria_c, imagen=imagen, video=video, descripcion=descripcion, masInfo1=masInfo1, masInfo2=masInfo2, masInfo3=masInfo3, masInfo4=masInfo4, masInfo5=masInfo5)
+    messages.success(request,'Juego Registrado')
+    return redirect('/')
 
 def juego(request):
     contexto = {"titulo":"Fifa 22","ImagenJ":"/static/core/img/Deportes/fifa_22.jpeg",

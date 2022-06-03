@@ -1,39 +1,60 @@
 {% extends "./plantillaproducto.html" %}
 
 {% block body %}
-<div class="table-container">
-<div class="heading">
-<div class="table">
-    <h2>Ordenes recientes</h2>
-    <div class="tabla">
-    <table>
-        <thead>
-            <tr>
-                <th>Codigo</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Categoria</th>
-                <th>imagen</th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for c in Productos %}
-            <tr>
-                <td>{{ c.codigo }}</td>
-                <td>{{ c.nombre }}</td>
-                <td>{{ c.precio }}</td>
-                <td>{{ c.categoria }}</td>
-                <td>{{ c.imagen }}</td>
-                <td><a href="#" class="btn btn-info">Editar</a></td>
-                <td><a href="#" class="btn btn-info">Eliminar</a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-</div>
-</div>    
+<div class="datos">
+    <h2>Añadir Juego</h2>
+    <div class="margenes">
+    <div class="card">
+        <div class="card-body">
+            <form action="/registrarjuego/" method="POST">{% csrf_token %}
+                <div class="flex">
+                <div class="form-group">
+                    <input type="number" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Codigo" minlength="1" maxlength="6" required>
+                </div>
+                <div class="form-group">
+                    <input type="textInput" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre del juego" maxlength="60" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="txtPrecio" name="txtPrecio" class="form-control" placeholder="Precio" min="3" max="9" value="1" required>
+                </div>
+                <div class="form-group">
+                    <input type="file" id="fileImagen" name="image" class="form-control" placeholder="Imagen">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="txtVideo" name="txtVideo" class="form-control" placeholder="Video">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="categoria" id="categoria">
+                        {% for x in categoria_m %}
+                            <option value="{{ x.codigo }}">{{ x.nombreCategoria }}</option>
+                        {% endfor %}
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="txtMasInfo1" name="txtMasInfo1" class="form-control" placeholder="Info1">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="txtMasInfo2" name="txtMasInfo2" class="form-control" placeholder="Info2">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="txtMasInfo3" name="txtMasInfo3" class="form-control" placeholder="Info3">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="txtMasInfo4" name="txtMasInfo4" class="form-control" placeholder="Info4">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="txtMasInfo5" name="txtMasInfo5" class="form-control" placeholder="Info5">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block text">Guardar</button>
+                </div>
+                </div>
+                    
+                
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock%}

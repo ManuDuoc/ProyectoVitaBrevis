@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import inicio, PS5, accion, deporte, simulacion, terror, registro, login, juego,administrador,anadirjuego
+from .views import inicio, PS5, accion, deporte, simulacion, terror, registro, login, juego,administrador,anadirjuego,listajuegos,registrarjuego
 
 urlpatterns = [
     path('', inicio,name="Principal"),
@@ -16,6 +16,8 @@ urlpatterns = [
     path('juego', juego,name="juego"),
     path('administrador',administrador,name='administrador'),
     path('anadirjuego',anadirjuego,name='anadirjuego'),
+    path('listajuegos',listajuegos,name='listajuegos'),
+    path('registrarjuego/',registrarjuego,name='registrarjuego'),
 ]
 
 if settings.DEBUG:

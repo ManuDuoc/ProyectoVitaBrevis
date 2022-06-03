@@ -1304,9 +1304,22 @@ p{
     margin: center;
 }
 
-.tabla{
-    margin-left: 270px;
+.table td{
+    width: 10%;
 }
+
+.table .nombre{
+    width: 30%;
+}
+
+.table .precio{
+    width: 15%;
+}
+
+.table .imag{
+    width: 100%;
+}
+
 .table thead{
     background-color: #ee2828;
 }
@@ -1356,8 +1369,51 @@ p{
     opacity: 1;
 }
 
+.datos{
+    margin: auto;
+}
+.card{
+    background-color: var(--color-background) !important;
+    margin: center;
+    width: 100%;
+    
+}
 
-.texto_largo{
-    position: relative;
-    font-size: 1px;
+.flex{
+    width: 100%;
+    display: inline-flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    grid-gap: 1px;
+    
+}
+
+.flex-2{
+    width: 100%;
+    display: inline-flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+form .form-group{
+    margin-top: 30px;
+    width: 50%;
+}
+
+form .form-group-2{
+    margin-top: 30px;
+    width: 87%;
+}
+
+.card-body{
+    width: 100%;
+    display: flex;
+    margin: center;
+    justify-content: center;
+}
+
+.flex button{
+    margin: auto;
+    width: 100%;
 }
