@@ -97,7 +97,7 @@
                 </li>
 
                 <li class={% block producto %}{% endblock %}>
-                    <a href="http://127.0.0.1:8000/listajuegos" class="sidebar" ><i class="material-icons-sharp">inventory</i><span>Productos</span></a>
+                    <a href="http://127.0.0.1:8000/listajuegos" class="sidebar" ><i class="material-icons-sharp">inventory</i><span>Lista de Juegos</span></a>
                 </li>
 
                 <li class={% block reporte %}{% endblock %}>
@@ -109,7 +109,7 @@
                 </li>
 
                 <li class={% block anadirp%}{% endblock %}>
-                    <a href="http://127.0.0.1:8000/anadirjuego" class="sidebar" ><i class="material-icons-sharp">add</i><span>Añadir Producto</span></a>
+                    <a href="http://127.0.0.1:8000/anadirjuego" class="sidebar" ><i class="material-icons-sharp">add</i><span>Añadir Juegos</span></a>
                 </li>
 
                 <li class={% block volvermenu%}{% endblock %}>
@@ -139,7 +139,8 @@
                         <span class="material-icons">arrow_back_ios</span>
                     </button>
 					
-					<a class="navbar-brand" href="#"> Dashboard </a>
+					{% block pagina %}
+                    {% endblock %}
 					
                     <button class="d-inline-block d-lg-none ml-auto more-button" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

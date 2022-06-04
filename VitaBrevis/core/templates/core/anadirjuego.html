@@ -1,5 +1,9 @@
 {% extends "./plantillaproducto.html" %}
 
+{% block pagina %}
+<a class="navbar-brand" href="#"> Añadir Juegos </a>
+{% endblock %}
+
 {% block content %}
     "desactive"
 {% endblock %}
@@ -41,7 +45,6 @@
 
 {% block body %}
 <div class="datos">
-    <h2>Añadir Juego</h2>
     <div class="margenes">
     <div class="card">
         <div class="card-body">
@@ -49,27 +52,34 @@
                 {% csrf_token %}
                 <div class="flex">
 
-                <div class="form-group">
+                <div class="carta">
+                    <div class="form-group">
+                    <p>ID del juego</p>
                     <input type="text" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Codigo" minlength="1" maxlength="6" required>
                 </div>
 
                 <div class="form-group">
+                    <p>Nombre del juego</p>
                     <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre del juego" maxlength="60" required>
                 </div>
 
                 <div class="form-group">
+                    <p>Precio del juego</p>
                     <input type="number" id="txtPrecio" name="txtPrecio" class="form-control" placeholder="Precio" min="1000" max="1000000000" value="" required>
                 </div>
 
                 <div class="form-group">
+                    <p>Imagen del Juego</p>
                     <input type="file" id="file" name="file" class="form-control">
                 </div>
 
                 <div class="form-group">
+                    <p>Link del Video</p>
                     <input type="text" id="txtVideo" name="txtVideo" class="form-control" placeholder="Video">
                 </div>
 
                 <div class="form-group">
+                    <p>Categoria</p>
                     <select class="form-control" name="categoria" id="categoria">
                         {% for x in categoria_m %}
                             <option value="{{ x.codigo }}">{{ x.nombreCategoria }}</option>
@@ -77,35 +87,42 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <input type="text" id="txtDescripcion" name="txtDescripcion" class="form-control" placeholder="Descripción del juego">
+                <div class="form-group2">
+                    <p>Descripcion del juego</p>
+                    <textarea name="txtDescripcion" id="txtDescripcion" class="form-control" cols="30" rows="8" placeholder="Descripción del juego"></textarea>
+                </div>
+                </div>
+                <div class="carta">
+                <div class="form-group2">
+                    <p>Informacion extra</p>
+                    <textarea name="txtMasInfo1" id="txtMasInfo1" class="form-control" cols="30" rows="3" placeholder="Mas informacion"></textarea>
                 </div>
 
-                <div class="form-group">
-                    <input type="text" id="txtMasInfo1" name="txtMasInfo1" class="form-control" placeholder="Info1">
+                <div class="form-group2">
+                    <p>Informacion extra</p>
+                    <textarea name="txtMasInfo2" id="txtMasInfo2" class="form-control" cols="30" rows="3" placeholder="Mas informacion"></textarea>
                 </div>
 
-                <div class="form-group">
-                    <input type="text" id="txtMasInfo2" name="txtMasInfo2" class="form-control" placeholder="Info2">
+                <div class="form-group2">
+                    <p>Informacion extra</p>
+                    <textarea name="txtMasInfo3" id="txtMasInfo3" class="form-control" cols="30" rows="3" placeholder="Mas informacion"></textarea>
                 </div>
 
-                <div class="form-group">
-                    <input type="text" id="txtMasInfo3" name="txtMasInfo3" class="form-control" placeholder="Info3">
+                <div class="form-group2">
+                    <p>Informacion extra</p>
+                    <textarea name="txtMasInfo4" id="txtMasInfo4" class="form-control" cols="30" rows="3" placeholder="Mas informacion"></textarea>
                 </div>
 
-                <div class="form-group">
-                    <input type="text" id="txtMasInfo4" name="txtMasInfo4" class="form-control" placeholder="Info4">
-                </div>
-
-                <div class="form-group">
-                    <input type="text" id="txtMasInfo5" name="txtMasInfo5" class="form-control" placeholder="Info5">
+                <div class="form-group2">
+                    <p>Informacion extra</p>
+                    <textarea name="txtMasInfo5" id="txtMasInfo5" class="form-control" cols="30" rows="3" placeholder="Mas informacion"></textarea>
                 </div>
                 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-block text">Guardar</button>
                 </div>
                 </div>
-                    
+                </div>
                 
                 </form>
             </div>
