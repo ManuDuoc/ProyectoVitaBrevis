@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="file" id="file" name="file" value="{{produc.foto}}" class="form-control">
+                    <input type="file" id="file" name="file"  class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -71,8 +71,12 @@
 
                 <div class="form-group">
                     <select class="form-control"  name="categoria" id="categoria">
-                        {% for x in categoria_m %}
-                            <option value="{{ x.codigo }}">{{ x.nombreCategoria }}</option>
+                        {% for x in categoria %}
+                            {% if x.codigo == produc.categoria.codigo %}
+                                <option value="{{ x.codigo }}" selected>{{ x.nombreCategoria }}</option>
+                            {% else %}
+                                <option value="{{ x.codigo }}">{{ x.nombreCategoria }}</option>
+                            {% endif %}                
                         {% endfor %}
                     </select>
                 </div>

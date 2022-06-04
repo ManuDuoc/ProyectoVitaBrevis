@@ -72,14 +72,18 @@ def eliminarJuego(request, codigo):
 
 def edicionJuegos(request, codigo):
     producto = Producto.objects.get(codigo=codigo)
-    return render(request,"core/edicionJuegos.html",{"produc":producto})
+    categorias = Categoria.objects.all()
+    contexto = {
+        "produc" : producto,
+        "categoria" : categorias
+    }
+    return render(request,"core/edicionJuegos.html",contexto)
 
 def editarjuego(request):
     codigo = request.POST['txtCodigo']
     nombre = request.POST['txtNombre']
     precio = request.POST['txtPrecio']
     categoria_m = request.POST['categoria']
-    f = request.FILES['file']
     video = request.POST['txtVideo']
     descripcion = request.POST['txtDescripcion']
     masInfo1 = request.POST['txtMasInfo1']
@@ -87,14 +91,15 @@ def editarjuego(request):
     masInfo3 = request.POST['txtMasInfo3']
     masInfo4 = request.POST['txtMasInfo4']
     masInfo5 = request.POST['txtMasInfo5']
-    categoria_c = Categoria.objects.get(codigo = categoria_m)
-
     produc = Producto.objects.get(codigo=codigo)
+    if(request.FILES.get("file")):
+        f = request.FILES["file"]
+        produc.foto = f
+
+
     produc.codigo = codigo
     produc.nombre = nombre
     produc.precio = precio
-    produc.categoria = categoria_c
-    produc.foto = f
     produc.video = video
     produc.descripcion = descripcion
     produc.masInfo1 = masInfo1
@@ -102,8 +107,10 @@ def editarjuego(request):
     produc.masInfo3 = masInfo3
     produc.masInfo4 = masInfo4
     produc.masInfo5 = masInfo5
+    categoria_c = Categoria.objects.get(codigo = categoria_m)
+    produc.categoria = categoria_c
     produc.save()
-    return('listajuegos')
+    return redirect('listajuegos')
 
 
 def juego(request):
