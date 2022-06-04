@@ -382,7 +382,7 @@ a:focus {
 #content {
 	position: relative;
     transition: all 0.3s;
-	background-color: #EEEEEE;
+	background-color: var(--color-background);
 }
 
 .top-navbar{
@@ -816,7 +816,6 @@ footer .copyright {
     position: relative;
     float: right;
     transition: all 0.3s;
-    background-color: #EEEEEE;
 }  
 
 #content.active {
@@ -1406,7 +1405,7 @@ p{
     }
 
     #content{
-        background: var(--color-background);
+        background: var(--color-background) !important;
     }
     .right{
         margin-top: 400px;

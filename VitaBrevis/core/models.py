@@ -16,7 +16,6 @@ class Juego(models.Model):
     titulo = models.CharField(max_length = 30, verbose_name= 'Titulo del Juego')
     nombreJuego = models.CharField(max_length = 30, verbose_name= 'Nombre del Juego')
     precioJuego = models.IntegerField(verbose_name= 'Precio del Juego')
-    foto = models.ImageField(upload_to="juegos", null= True)
     video = models.URLField(max_length=200, verbose_name= 'Video del Juego')
     descripcion = models.TextField(verbose_name = 'Descripcion del Juego')
     masInfo1 = models.TextField(verbose_name = 'Mas Informacion del Juego 1')

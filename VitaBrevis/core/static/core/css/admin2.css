@@ -382,11 +382,7 @@ a:focus {
 
 
 
-#content {
-	position: relative;
-    transition: all 0.3s;
-	background-color: var(--color-background);
-}
+
 
 .top-navbar{
 	width:100%;
@@ -809,17 +805,9 @@ footer .copyright {
 
 
 
-#content {
-    width: calc(100% - 260px);
-    position: relative;
-    float: right;
-    transition: all 0.3s;
-    background-color: var(--color-background);
-}  
 
-#content.active {
-    width: calc(100% - 80px);
-} 
+
+
 
 #sidebar.active .menu {
     position: absolute;

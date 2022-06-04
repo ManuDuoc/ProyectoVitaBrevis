@@ -1,5 +1,44 @@
 {% extends "./plantillaproducto.html" %}
 
+{% block content %}
+    "desactive"
+{% endblock %}
+
+{% block Usuarios %}
+    "desactive"
+{% endblock %}
+
+{% block ventas %}
+    "desactive"
+{% endblock %}
+{% block anal %}
+    "desactive"
+{% endblock %}
+
+{% block producto %}
+    "active"
+{% endblock %}
+
+{% block reporte %}
+    "desactive"
+{% endblock %}
+
+{% block ajustes%}
+    "desactive"
+{% endblock %}
+
+{% block anadirp%}
+    "desactive"
+{% endblock %}
+
+{% block volvermenu%}
+    "desactive"
+{% endblock %}
+
+{% block cerrar%}
+    "desactive"
+{% endblock %}
+
 {% block body %}
 <div class="table-container">
 <div class="heading">
@@ -26,8 +65,8 @@
                 <td class="precio">{{ c.precio }}</td>
                 <td class="categoria">{{ c.categoria }}</td>
                 <td class="imag">{{ c.foto }}</td>
-                <td><a href="#" class="btn btn-info">Editar</a></td>
-                <td><a href="#" class="btn btn-info">Eliminar</a></td>
+                <td><a href="edicionJuegos/{{c.codigo}}" class="btn btn-info">Editar</a></td>
+                <td><a href="eliminarJuego/{{c.codigo}}" class="btn btn-info">Eliminar</a></td>
             </tr>
             {% endfor %}
         </tbody>

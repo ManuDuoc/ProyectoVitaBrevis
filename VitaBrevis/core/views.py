@@ -1,7 +1,5 @@
-from msilib.schema import File
-from pickle import FALSE
 from django.shortcuts import render, redirect
-from .models import Categoria, Juego, Producto
+from .models import Categoria, Producto
 from django.contrib import messages
 
 # Create your views here.
@@ -64,7 +62,49 @@ def registrarjuego(request):
 
     Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, categoria=categoria_c, foto=f, video=video, descripcion=descripcion, masInfo1=masInfo1, masInfo2=masInfo2, masInfo3=masInfo3, masInfo4=masInfo4, masInfo5=masInfo5)
     messages.success(request,'Juego Registrado')
-    return redirect('/')
+    return redirect('listajuegos')
+
+def eliminarJuego(request, codigo):
+    produc = Producto.objects.get(codigo=codigo)
+    produc.delete()
+    return redirect('listajuegos')
+    
+
+def edicionJuegos(request, codigo):
+    producto = Producto.objects.get(codigo=codigo)
+    return render(request,"core/edicionJuegos.html",{"produc":producto})
+
+def editarjuego(request):
+    codigo = request.POST['txtCodigo']
+    nombre = request.POST['txtNombre']
+    precio = request.POST['txtPrecio']
+    categoria_m = request.POST['categoria']
+    f = request.FILES['file']
+    video = request.POST['txtVideo']
+    descripcion = request.POST['txtDescripcion']
+    masInfo1 = request.POST['txtMasInfo1']
+    masInfo2 = request.POST['txtMasInfo2']
+    masInfo3 = request.POST['txtMasInfo3']
+    masInfo4 = request.POST['txtMasInfo4']
+    masInfo5 = request.POST['txtMasInfo5']
+    categoria_c = Categoria.objects.get(codigo = categoria_m)
+
+    produc = Producto.objects.get(codigo=codigo)
+    produc.codigo = codigo
+    produc.nombre = nombre
+    produc.precio = precio
+    produc.categoria = categoria_c
+    produc.foto = f
+    produc.video = video
+    produc.descripcion = descripcion
+    produc.masInfo1 = masInfo1
+    produc.masInfo2 = masInfo2
+    produc.masInfo3 = masInfo3
+    produc.masInfo4 = masInfo4
+    produc.masInfo5 = masInfo5
+    produc.save()
+    return('listajuegos')
+
 
 def juego(request):
     contexto = {"titulo":"Fifa 22","ImagenJ":"/static/core/img/Deportes/fifa_22.jpeg",
