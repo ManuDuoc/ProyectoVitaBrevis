@@ -31,7 +31,7 @@
 
 /* --------------------- VARIEABLES OSCURAS -------------------------- */
 .dark-theme-variables{
-    --color-card: #161515;
+    --color-card: #262a2666;
     --color-background: #25c078;
     --color-white: #0f1011;
     --color-dark: #edeffd;
@@ -1437,6 +1437,7 @@ form .form-group-2{
 
 .form-group button{
     margin-top: 15px;
+    border-color: white;
 }
 
 @media screen and (max-width: 1379px) {
@@ -1461,4 +1462,8 @@ form .form-group-2{
     .carta{
         width: 250px;
     }
+}
+
+.p{
+    color: white;
 }
