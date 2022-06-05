@@ -24,6 +24,7 @@ class Juego(models.Model):
     masInfo4 = models.TextField(verbose_name = 'Mas Informacion del Juego 4')
     masInfo5 = models.TextField(verbose_name = 'Mas Informacion del Juego 5')
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
+    
 
     def __str__(self):
         return self.nombreJuego
@@ -35,13 +36,14 @@ class Producto(models.Model):
     video = models.CharField(max_length=150,null=True)
     foto = models.ImageField(upload_to="juegos", null= True)
     descripcion = models.TextField(null=True)
+    stock = models.PositiveSmallIntegerField(null=True)
     masInfo1 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 1')
     masInfo2 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 2')
     masInfo3 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 3')
     masInfo4 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 4')
     masInfo5 = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 5')
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE,null=True)
-    
+
     def __str__(self):
         texto = "{0} ({1})"
         return texto.format(self.nombre, self.codigo)

@@ -50,6 +50,7 @@ def registrarjuego(request):
     nombre = request.POST['txtNombre']
     precio = request.POST['txtPrecio']
     categoria_m = request.POST['categoria']
+    stock = request.POST['txtStock']
     f = request.FILES['file']
     video = request.POST['txtVideo']
     descripcion = request.POST['txtDescripcion']
@@ -60,7 +61,7 @@ def registrarjuego(request):
     masInfo5 = request.POST['txtMasInfo5']
     categoria_c = Categoria.objects.get(codigo = categoria_m)
 
-    Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, categoria=categoria_c, foto=f, video=video, descripcion=descripcion, masInfo1=masInfo1, masInfo2=masInfo2, masInfo3=masInfo3, masInfo4=masInfo4, masInfo5=masInfo5)
+    Producto.objects.create(codigo=codigo, nombre=nombre, precio=precio, categoria=categoria_c, stock=stock, foto=f, video=video, descripcion=descripcion, masInfo1=masInfo1, masInfo2=masInfo2, masInfo3=masInfo3, masInfo4=masInfo4, masInfo5=masInfo5)
     messages.success(request,'Juego Registrado')
     return redirect('listajuegos')
 
@@ -83,6 +84,7 @@ def editarjuego(request):
     codigo = request.POST['txtCodigo']
     nombre = request.POST['txtNombre']
     precio = request.POST['txtPrecio']
+    stock = request.POST['txtStock']
     categoria_m = request.POST['categoria']
     video = request.POST['txtVideo']
     descripcion = request.POST['txtDescripcion']
@@ -100,6 +102,7 @@ def editarjuego(request):
     produc.codigo = codigo
     produc.nombre = nombre
     produc.precio = precio
+    produc.stock = stock
     produc.video = video
     produc.descripcion = descripcion
     produc.masInfo1 = masInfo1
