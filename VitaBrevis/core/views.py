@@ -29,13 +29,24 @@ def terror(request):
     return render(request,'core/terror.html')
 
 def administrador(request):
-    return render(request,'core/administrador.html')    
+    return render(request,'core/administrador.html') 
+
+def inicios(request):
+    Productos = Producto.objects.all()
+    return render(request,'core/inicio.html',{"Productos": Productos})
 
 def anadirjuego(request):
     categorias = Categoria.objects.all() #me trae todos los registros de esa tabla (select * from)
     contexto = {"categoria_m":categorias}
     return render(request,'core/anadirjuego.html',contexto)
-    
+
+def Juego(request, codigo):
+    producto = Producto.objects.get(codigo=codigo)
+    contexto = {
+        "produc" : producto,
+    }
+    return render(request,'core/Juegos.html',contexto)
+
 def listajuegos(request):
     Productos = Producto.objects.all()
     return render(request,'core/listajuegos.html',{"Productos": Productos})

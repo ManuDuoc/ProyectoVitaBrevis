@@ -1,0 +1,13 @@
+{% extends "./plantilla_inicio.html" %}
+
+{% block body %}
+{% for c in Productos %}
+    <div class="card-ini" > <a href="Juegos/{{c.codigo}}" class="imagen12" >
+      <img class="card-img-top" src="{{ c.foto.url }}"  alt="Card image" > </a>
+          <div class="card-body"> 
+          <h6 class="card-title">{{ c.nombre }} <br>CLP ${{ c.precio }}</h6>
+        </div>
+      </div>
+{% endfor %}
+
+{% endblock %}

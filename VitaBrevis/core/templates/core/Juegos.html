@@ -1,0 +1,42 @@
+{% extends 'core/PlantillaJuegos.html' %}
+
+{% load static %}
+
+{% block Imagen %}
+<img alt="Sin foto" class="imagen" src="{{produc.foto.url}}">
+{% endblock Imagen %}
+
+{% block Nombre %}
+<h4>{{produc.nombre}}</h4>
+{% endblock Nombre %}
+
+{% block Descripcion %}
+<p>{{produc.descripcion}}</p>
+{% endblock Descripcion %}
+
+{% block Precio %}
+<h3>${{produc.precio}}</h3>
+{% endblock Precio %}
+
+
+{% block Video %}
+<iframe src= {{produc.video}} title="YouTube video" allowfullscreen></iframe>
+{% endblock Video %}
+
+
+{% block Info1 %}
+<li>{{produc.masInfo1}}</li>
+{% endblock Info1 %}
+
+{% block Info2 %}
+<li>{{produc.masInfo2}}</li>
+{% endblock Info2 %}
+
+{% block Info3 %}
+<li>{{produc.masInfo3}}</li>
+{% endblock Info3 %}
+
+{% block Info4 %}
+<li>{{produc.masInfo4}}</li>
+{% endblock Info4 %}
+
