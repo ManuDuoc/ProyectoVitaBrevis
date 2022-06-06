@@ -1,5 +1,12 @@
 {% extends 'core/PlantillaJuegos.html' %}
 
+{% block categ %}
+{% for c in cate %}
+<li><a class="dropdown-item" href="http://127.0.0.1:8000/Categoria/{{c.nombreCategoria}}">{{c.nombreCategoria}}</a></li>
+{% endfor %}
+{% endblock %}
+
+
 {% load static %}
 
 {% block Imagen %}

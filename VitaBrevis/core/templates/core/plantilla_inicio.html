@@ -34,10 +34,8 @@
               Categorias
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="accion">Acción</a></li>
-                <li><a class="dropdown-item" href="deporte">Deportes</a></li>
-                <li><a class="dropdown-item" href="simulacion">Simulación</a></li>
-                <li><a class="dropdown-item" href="terror">Terror</a></li>
+                {% block categ %}
+                {% endblock %}
               </ul>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

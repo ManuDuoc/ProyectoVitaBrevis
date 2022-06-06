@@ -1,5 +1,17 @@
 {% extends "./plantilla_inicio.html" %}
 
+{% block cate %}
+{% for c in Productos %}
+<li><a class="dropdown-item" href="accion">{{c.categoria.nombreCategoria}}</a></li>    
+{% endfor %}     
+{% endblock %}
+
+{% block categ %}
+{% for c in categoria %}
+<li><a class="dropdown-item" href="Categoria/{{c.nombreCategoria}}">{{c.nombreCategoria}}</a></li>
+{% endfor %}
+{% endblock %}
+
 {% block body %}
 {% for c in Productos %}
     <div class="card-ini" > <a href="Juegos/{{c.codigo}}" class="imagen12" >

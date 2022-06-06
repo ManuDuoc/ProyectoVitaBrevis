@@ -11,24 +11,6 @@ class Categoria(models.Model):
         return self.nombreCategoria
 
 
-class Juego(models.Model):
-    idJuego = models.IntegerField(primary_key = True, verbose_name= 'Id del juego')
-    titulo = models.CharField(max_length = 30, verbose_name= 'Titulo del Juego')
-    nombreJuego = models.CharField(max_length = 30, verbose_name= 'Nombre del Juego')
-    precioJuego = models.IntegerField(verbose_name= 'Precio del Juego')
-    video = models.URLField(max_length=200, verbose_name= 'Video del Juego')
-    descripcion = models.TextField(verbose_name = 'Descripcion del Juego')
-    masInfo1 = models.TextField(verbose_name = 'Mas Informacion del Juego 1')
-    masInfo2 = models.TextField(verbose_name = 'Mas Informacion del Juego 2')
-    masInfo3 = models.TextField(verbose_name = 'Mas Informacion del Juego 3')
-    masInfo4 = models.TextField(verbose_name = 'Mas Informacion del Juego 4')
-    masInfo5 = models.TextField(verbose_name = 'Mas Informacion del Juego 5')
-    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
-    
-
-    def __str__(self):
-        return self.nombreJuego
-
 class Producto(models.Model):
     codigo = models.CharField(primary_key=True, max_length=6)
     nombre = models.CharField(max_length=50)

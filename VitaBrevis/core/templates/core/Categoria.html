@@ -1,0 +1,30 @@
+{% extends "./plantillacategoria.html" %}
+
+
+{% block categ %}
+{% for c in cate %}
+<li><a class="dropdown-item" href="{{c.nombreCategoria}}">{{c.nombreCategoria}}</a></li>
+{% endfor %}
+{% endblock %}
+
+{% block titulo %}
+  {{categoria.nombreCategoria}}
+{% endblock %}
+
+{% block categoria %} 
+{{categoria.nombreCategoria}}
+  {% endblock %}
+
+{% block body %}
+{% for c in Productos %}
+{% if c.categoria.nombreCategoria == categoria.nombreCategoria %}
+    <div class="card-ini" > <a href="http://127.0.0.1:8000/Juegos/{{c.codigo}}" class="imagen12" >
+      <img class="card-img-top" src="{{ c.foto.url }}"  alt="Card image" > </a>
+          <div class="card-body"> 
+          <h6 class="card-title">{{ c.nombre }} <br>CLP ${{ c.precio }}</h6>
+        </div>
+      </div>
+      {% endif %}
+{% endfor %}
+
+{% endblock %}
