@@ -3,11 +3,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
-from .views import inicio, PS5, registro, administrador,anadirjuego,listajuegos,registrarjuego,eliminarJuego,edicionJuegos,editarjuego,inicios,Juego,Categorias,Usuarios,eliminarUsuario
+from .views import inicio, usuario, registro, administrador,anadirjuego,listajuegos,registrarjuego,eliminarJuego,edicionJuegos,editarjuego,inicios,Juego,Categorias,Usuarios,eliminarUsuario
 
 urlpatterns = [
     path('', inicio,name="Principal"),
-    path('PS5', PS5,name="PS5"),
+    path('usuario', usuario,name="usuario"),
     path('administrador',administrador,name='administrador'),
     path('anadirjuego',anadirjuego,name='anadirjuego'),
     path('listajuegos',listajuegos,name='listajuegos'),

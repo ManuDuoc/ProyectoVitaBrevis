@@ -7,7 +7,13 @@ from django.contrib import messages
 # Create your views here.
 
 def inicio(request):
-    return render(request,'core/Principal.html')
+    Productos = Producto.objects.all()
+    Categorias= Categoria.objects.all()
+    contexto = {
+        "Productos" : Productos,
+        "categoria" : Categorias
+    }
+    return render(request,'core/Principal.html', contexto)
 
 def PS5(request):
     return render(request,'core/PS5.html')
@@ -28,6 +34,10 @@ def registro(request):
 
 def login(request):
     return render(request,'core/inicio.html')
+
+def usuario(request):
+    categorias= Categoria.objects.all()
+    return render(request,'core/usuarios.html',{"cate":categorias})
 
 def logout(request):
     return render(request,'core/logout.html')
