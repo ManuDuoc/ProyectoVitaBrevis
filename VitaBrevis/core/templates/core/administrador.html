@@ -104,63 +104,27 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>id</th>
                             <th>Nombre del producto</th>
                             <th>Numero del producto</th>
-                            <th>Pago</th>
+                            <th>Categoria</th>
                             <th>monto</th>
-                            <th>Estado</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% for c in Productos %}
                         <tr>
-                            <td>Resident evil village</td>
-                            <td>89</td>
-                            <td>Debito</td>
-                            <td>$13,990</td>
-                            <td class="success">Comprado</td>
-                            <td class="primary">Detalles</td>
-                        </tr>
-                        <tr>
-                            <td>Elden Ring</td>
-                            <td>63</td>
-                            <td>Tarjeta Credito</td>
-                            <td>35,990</td>
-                            <td class="success">Comprado</td>
-                            <td class="primary">Detalles</td>
-                        </tr>
-                        <tr>
-                            <td>Dead By Daylight</td>
-                            <td>132</td>
-                            <td>PayPal</td>
-                            <td>$4,990</td>
-                            <td class="success">Comprado</td>
-                            <td class="primary">Detalles</td>
-                        </tr>
-                        <tr>
-                            <td>Spiderman Miles Morales</td>
-                            <td>32</td>
-                            <td>Debito</td>
-                            <td>$27,990</td>
-                            <td class="danger">Cancelado</td>
-                            <td class="primary">Detalles</td>
-                        </tr>
-                        <tr>
-                            <td>Guardianes de la galaxia</td>
-                            <td>42</td>
-                            <td>Transferencia Bancaria</td>
-                            <td>$15,990</td>
-                            <td class="warning">Pendiente</td>
-                            <td class="primary">Detalles</td>
-                        </tr>
-                        <tr>
-                            <td>Devil May Cry</td>
-                            <td>83</td>
-                            <td>Debito</td>
-                            <td>$13,990</td>
+                            <td>{{c.codigo}}</td>
+                            <td>{{c.nombre}}</td>
+                            <td>{{c.stock}}</td>
+                            <td>{{c.categoria}}</td>
+                            <td>{{c.precio}}</td>
                             <td class="success">Pendiente</td>
                             <td class="primary">Detalles</td>
+                            
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
                 <a href="#">Mostrar todo</a>
@@ -173,37 +137,18 @@
                 <h2>Actualizaciones Recientes</h2>
                 <div class="updates">
                     <div class="update">
+                        {% for i in usuarios %}
                         <div class="profile-photo">
-                            
                             <img src="core/img/d9a17683ca76bb3ff86d148c7099a523.jpeg" alt="foto del usuario">
                         </div>
                         <div class="message">
-                            <p><b>Hasbulla</b> Ha Comprado exitosamente
-                            Dead By Daylight </p>
-                            <small class="text-muted">Hace 1 Horas</small>
+                            <p><b>{{i.username}}</b> Se Ha Registrado exitosamente
+                             </p>
+                            <small class="text-muted">El {{i.date_joined}}</small>
                             </div>
                         </div>
-                        <div class="update">
-                            <div class="profile-photo">
-                                
-                                <img src="core/img/yanfrijpg.webp" alt="foto del usuario">
-                            </div>
-                            <div class="message">
-                                <p><b>Yanfri</b> Ha Comprado exitosamente
-                                Elden Ring</p>
-                                <small class="text-muted">Hace 40 Minutos</small>
-                                </div>
-                            </div>
-                        <div class="update">
-                        <div class="profile-photo">
-                            <img src="core/img/lalitomc.jpg" alt="foto del usuario">
-                        </div>
-                        <div class="message">
-                            <p><b>lalitomc</b> Ha Comprado exitosamente
-                            Resident evil village</p>
-                            <small class="text-muted">Hace 20 minutos</small>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        
                     </div>
                 </div>
                 <div class="sales-analytics">

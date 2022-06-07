@@ -113,7 +113,7 @@
                 </li>
 
                 <li class={% block volvermenu%}{% endblock %}>
-                    <a href="#" class="sidebar" ><i class="material-icons-sharp">undo</i><span>Volver al menú</span></a>
+                    <a href="http://127.0.0.1:8000/inicio" class="sidebar" ><i class="material-icons-sharp">undo</i><span>Volver al menú</span></a>
                 </li>
 
                 <li class={% block cerrar%}{% endblock %}>
@@ -178,7 +178,19 @@
     <script src="{% static 'core/js/sidebar.js' %}"></script>
     <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'core/js/cambiocolor.js' %}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    {% if messages %}
+        {% for m in messages %}
+            <script>
+                swal.fire({
+                    "title": "felicitaciones",
+                    "text": "{{m}}",
+                    "icon": "success"
+                })
+            </script>
+        {% endfor %}
+    {% endif %}
 
 
 

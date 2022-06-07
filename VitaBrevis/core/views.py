@@ -63,8 +63,16 @@ def Categorias(request,nombreCategoria):
     }
     return render(request,'core/Categoria.html',contexto)
 
-def administrador(request): 
-    return render(request,'core/administrador.html') 
+def administrador(request):
+    Productos = Producto.objects.all()
+    categoria = Categoria.objects.all()
+    users = User.objects.all() 
+    contexto = {
+        "Productos" : Productos,
+        "categoria" : categoria,
+        "usuarios" : users
+    }
+    return render(request,'core/administrador.html',contexto) 
 
 def inicios(request):
     Productos = Producto.objects.all()
@@ -121,6 +129,7 @@ def registrarjuego(request):
 def eliminarJuego(request, codigo):
     produc = Producto.objects.get(codigo=codigo)
     produc.delete()
+    messages.success(request,'Juego Eliminado')
     return redirect('listajuegos')
     
 
@@ -166,5 +175,6 @@ def editarjuego(request):
     categoria_c = Categoria.objects.get(codigo = categoria_m)
     produc.categoria = categoria_c
     produc.save()
+    messages.success(request,'Juego Editado')
     return redirect('listajuegos')
 
