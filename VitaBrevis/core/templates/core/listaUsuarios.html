@@ -1,0 +1,82 @@
+{% extends "./plantillaproducto.html" %}
+
+
+{% block pagina %}
+<a class="navbar-brand" href="#"> Lista de Usuarios </a>
+{% endblock %}
+
+{% block content %}
+    "desactive"
+{% endblock %}
+
+{% block Usuarios %}
+    "active"
+{% endblock %}
+
+{% block ventas %}
+    "desactive"
+{% endblock %}
+
+{% block anal %}
+    "desactive"
+{% endblock %}
+
+{% block producto %}
+    "desactive"
+{% endblock %}
+
+{% block reporte %}
+    "desactive"
+{% endblock %}
+
+{% block ajustes%}
+    "desactive"
+{% endblock %}
+
+{% block anadirp%}
+    "desactive"
+{% endblock %}
+
+{% block volvermenu%}
+    "desactive"
+{% endblock %}
+
+{% block cerrar%}
+    "desactive"
+{% endblock %}
+
+{% block body %}
+<div class="table-container">
+<div class="heading">
+<div class="table">
+    <h2>Ordenes recientes</h2>
+    <div class="tabla">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre usuario</th>
+                <th>Correo</th>
+                <th>Administrador</th>
+                <th>Ultima conexion</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in usuario %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td class="precio">{{ c.username }}</td>
+                <td class="nombre">{{ c.email }}</td>
+                <td class="categoria">{{ c.is_superuser }}</td>
+                <td class="imag">{{c.last_login}}
+                <td><a href="eliminarUsuario/{{c.id}}" class="btn btn-info">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>    
+</div>
+{% endblock%}

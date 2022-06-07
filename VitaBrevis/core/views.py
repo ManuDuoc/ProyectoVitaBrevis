@@ -32,6 +32,15 @@ def login(request):
 def logout(request):
     return render(request,'core/logout.html')
 
+def Usuarios(request):
+    categorias= User.objects.all() #me trae todos los registros de esa tabla (select * from)
+    return render(request,'core/listaUsuarios.html',{"usuario":categorias})
+
+def eliminarUsuario(request, id):
+    produc = User.objects.get(id=id)
+    produc.delete()
+    messages.success(request,'Usuario Eliminado')
+    return redirect('listaUsuarios')
 
 def Categorias(request,nombreCategoria):
     categorias= Categoria.objects.get(nombreCategoria=nombreCategoria)

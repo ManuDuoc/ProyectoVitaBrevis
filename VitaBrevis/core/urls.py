@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
-from .views import inicio, PS5, registro, administrador,anadirjuego,listajuegos,registrarjuego,eliminarJuego,edicionJuegos,editarjuego,inicios,Juego,Categorias
+from .views import inicio, PS5, registro, administrador,anadirjuego,listajuegos,registrarjuego,eliminarJuego,edicionJuegos,editarjuego,inicios,Juego,Categorias,Usuarios,eliminarUsuario
 
 urlpatterns = [
     path('', inicio,name="Principal"),
@@ -18,6 +18,9 @@ urlpatterns = [
     path('inicio',inicios,name="inicio"),
     path('Juegos/<codigo>',Juego,name='Juego'),
     path('Categoria/<nombreCategoria>',Categorias,name='Juego'),
+    path('listaUsuarios',Usuarios,name='listaUsuarios'),
+    path('eliminarUsuario/<id>',eliminarUsuario,name='eliminarUsuario'),
+
 
     path('registro', registro,name="registro"),
     path('login/', LoginView.as_view(template_name='core/login.html'), name="login"),
