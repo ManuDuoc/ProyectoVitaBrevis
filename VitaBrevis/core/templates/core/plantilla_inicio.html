@@ -34,15 +34,25 @@
                 {% block categ %}
                 {% endblock %}
               </ul>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Registro/inicio
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="registro">Registrate</a></li>
-                <li><a class="dropdown-item" href="login">Iniciar sesion</a></li>
-                </ul>
-                </ul>
+
+              {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <li><a class="nav-link fondoletrasmenu" href="{% url 'administrador' %}">{{ user.username }}</a></li>
+                </li>
+                <li class="nav-item">
+                  <li><a class="nav-link fondoletrasmenu" href="{% url 'logout' %}">Cerrar sesion </a></li>
+                </li>
+                {% else %}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Registro/Inicio
+                    </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="registro">Registrate</a></li>
+                    <li><a class="dropdown-item" href="login">Iniciar sesion</a></li>
+                  </ul>
+              {% endif %}
+            </ul>
         </div>
       </div>
     </nav>
