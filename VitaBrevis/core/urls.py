@@ -2,13 +2,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import inicio, PS5, registro, login, administrador,anadirjuego,listajuegos,registrarjuego,eliminarJuego,edicionJuegos,editarjuego,inicios,Juego,Categorias
+from django.contrib.auth.views import LoginView, LogoutView
+from .views import inicio, PS5, registro, administrador,anadirjuego,listajuegos,registrarjuego,eliminarJuego,edicionJuegos,editarjuego,inicios,Juego,Categorias
 
 urlpatterns = [
     path('', inicio,name="Principal"),
     path('PS5', PS5,name="PS5"),
-    path('registro', registro,name="registro"),
-    path('login', login,name="login"),
     path('administrador',administrador,name='administrador'),
     path('anadirjuego',anadirjuego,name='anadirjuego'),
     path('listajuegos',listajuegos,name='listajuegos'),
@@ -18,7 +17,11 @@ urlpatterns = [
     path('editarjuego/',editarjuego,name='editarjuego'),
     path('inicio',inicios,name="inicio"),
     path('Juegos/<codigo>',Juego,name='Juego'),
-    path('Categoria/<nombreCategoria>',Categorias,name='Juego')
+    path('Categoria/<nombreCategoria>',Categorias,name='Juego'),
+
+    path('registro', registro,name="registro"),
+    path('login/', LoginView.as_view(template_name='core/login.html'), name="login"),
+    path('logout/', LogoutView.as_view(template_name='core/logout.html'), name="logout"),
 ]
 
 if settings.DEBUG:

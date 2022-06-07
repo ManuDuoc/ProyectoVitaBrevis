@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Categoria, Producto
+from .forms import UserRegisterForm
+from django.contrib.auth.models import User
 from django.contrib import messages
 
 # Create your views here.
@@ -11,10 +13,24 @@ def PS5(request):
     return render(request,'core/PS5.html')
 
 def registro(request):
-    return render(request,'core/registro.html')
+	if request.method == 'POST':
+		form = UserRegisterForm(request.POST)
+		if form.is_valid():
+			form.save()
+			username = form.cleaned_data['username']
+			messages.success(request, f'Usuario {username} creado')
+			return redirect('login')
+	else:
+		form = UserRegisterForm()
+
+	context = { 'form' : form }
+	return render(request, 'core/registro.html', context)
 
 def login(request):
-    return render(request,'core/login.html')
+    return render(request,'core/inicio.html')
+
+def logout(request):
+    return render(request,'core/logout.html')
 
 
 def Categorias(request,nombreCategoria):
