@@ -36,14 +36,18 @@
                         {% endfor %}
                         {% endblock %}
                     </ul>
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <li><a class="nav-link fondoletrasmenu" href="{% url 'administrador' %}">{{ user.username }}</a></li>
-                        </li>
+                    {% if perms.core.add_producto %}
                         <li class="nav-item">
                             <li><a class="nav-link fondoletrasmenu" href="{% url 'administrador' %}">Administracion </a></li>
                         </li>
-                        {% else %}
+                        <li class="nav-item">
+                            <li><a class="nav-link fondoletrasmenu" href="{% url 'usuario' %}">{{ user.username }}</a></li>
+                        </li>
+                    {% elif user.is_authenticated %}
+                        <li class="nav-item">
+                            <li><a class="nav-link fondoletrasmenu" href="{% url 'usuario' %}">{{ user.username }}</a></li>
+                        </li>
+                    {% else %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Registro/Inicio
