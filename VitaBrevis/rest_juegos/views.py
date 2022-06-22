@@ -23,3 +23,25 @@ def lista_juegos(request):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)    
 # Create your views here.
+
+
+@api_view(['GET','PUT', 'DELETE'])
+def detalle_juego(request, codigo):
+    try:
+        producto = Producto.objects.get(codigo=codigo)
+    except Producto.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    if request.method == 'GET':
+        serializer = ProductoSerializers(producto)
+        return Response(serializer.data)
+    if request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = ProductoSerializers(producto, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        producto.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
