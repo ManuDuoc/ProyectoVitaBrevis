@@ -19,7 +19,11 @@
 {% for c in Productos %}
 {% if c.categoria.nombreCategoria == categoria.nombreCategoria %}
     <div class="card-ini" > <a href="http://127.0.0.1:8000/Juegos/{{c.codigo}}" class="imagen12" >
-      <img class="card-img-top" src="{{ c.foto.url }}"  alt="Card image" > </a>
+      {% if c.foto %}
+        <img class="card-img-top" src="{{ c.foto.url }}"  alt="Card image" >
+      {% else %}
+        <p style="text-align: center; margin-top: 235px;">No posee Imagen</p>
+      {% endif %} </a>
           <div class="card-body"> 
           <h6 class="card-title">{{ c.nombre }} <br>CLP ${{ c.precio }}</h6>
         </div>

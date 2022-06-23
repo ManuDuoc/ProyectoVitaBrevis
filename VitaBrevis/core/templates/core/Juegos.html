@@ -10,7 +10,11 @@
 {% load static %}
 
 {% block Imagen %}
-<img alt="Sin foto" class="imagen" src="{{produc.foto.url}}">
+    {% if produc.foto %}
+        <img class="card-img-top" src="{{ produc.foto.url }}"  alt="Card image" >
+    {% else %}
+    <p style="text-align: center; margin-top: 235px;">No posee Imagen</p>
+    {% endif %}
 {% endblock Imagen %}
 
 {% block Nombre %}
