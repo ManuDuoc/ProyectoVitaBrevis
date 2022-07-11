@@ -137,13 +137,22 @@
                 <h2>Actualizaciones Recientes</h2>
                 <div class="updates">
                     <div class="update">
-                        {% for i in usuarios %}
+                        {% for i in perfil %}
+
                         <div class="profile-photo">
-                            <img src="core/img/d9a17683ca76bb3ff86d148c7099a523.jpeg" alt="foto del usuario">
+                            {% if user.perfil.imagen %}
+                            <img src="{{i.imagen.url}}" alt="foto del usuario">
+                            {% else %}
+                                sin imagen
+                            {% endif %}</a>
+                            
                         </div>
+                        {% endfor %}
+                        {% for i in usuarios %}
+                        
                         <div class="message">
                             <p><b>{{i.username}}</b> Se Ha Registrado exitosamente
-                             </p>
+                            </p>
                             <small class="text-muted">El {{i.date_joined}}</small>
                             </div>
                         </div>

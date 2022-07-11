@@ -10,7 +10,11 @@
         <link href="{% static 'core/css/variable.css' %}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{% static 'core/css/perfiles.css' %}">
         <link rel="shortcut icon" href="{% static 'core/img/icono-removebg-preview.png' %}  " type="image/x-icon">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <title>Vita Brevis</title>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     </head>
     <script src="https://kit.fontawesome.com/19e0713a59.js" crossorigin="anonymous"></script>
     <body>
@@ -55,6 +59,8 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="registro">Registrate</a></li>
                             <li><a class="dropdown-item" href="login">Iniciar sesion</a></li>
+                                logout
+                                </span></li>
                         </ul>
                     {% endif %}
                     </ul>
@@ -67,11 +73,16 @@
                 <div class="col-md-4 mt-1">
                     <div class="card1 text-center sidebar">
                         <div class="card-body2" >
-                            <img src="{% static 'core/img/icono-perfil.jpg' %}" class="rounded-circle" style="margin-top: 15px;" width="150">
+                            {% if user.perfil.imagen %}
+                                <img src="{{user.perfil.imagen.url}}" class="rounded-circle" style="margin-top: 15px;" width="150">
+                            {% else %}
+                                <img src="{% static 'core/img/icono-perfil.jpg' %}" class="rounded-circle" style="margin-top: 15px;" width="150"></p>
+                            {% endif %}</a>
+                            
                             <div class="mt-3">
                                 <h3>{{ user.username }}</h3>
-                                <a href="{% url 'inicio' %}">Inicio</a>
-                                <a href="{% url 'logout' %}">Cerrar sesion</a>
+                                <a href="http://127.0.0.1:8000/inicio" class="inicio" ><i class="material-icons-sharp">home</i><span>menú</span></a>
+                                <a href="{% url 'logout' %}" class="salir" ><i class="material-icons-sharp">undo</i><span>Salir</span></a>
                             </div>
                         </div>
                     </div>
@@ -100,14 +111,14 @@
                         </div>
                     </div>
                     <div class="card1 mb-3 content">
-                        <h2 class="m-3" >Juegos comprados</h2>
+                        <h2 class="m-3" >Sobre mi: </h2>
                         <div class="card-body2">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <h5 style="margin-left: 10px;">Keys:</h5>
+                                    <h5 style="margin-left: 10px;">Descripción:</h5>
                                 </div>
                                 <div class="col-md-9 text-secondary" style="margin-bottom: 15px;">
-                                    Resident Evil Village <br> Fifa 22 <br> Dead By Daylight.
+                                    {{user.perfil.descripcion}}
                                 </div>
                             </div>
                         </div>

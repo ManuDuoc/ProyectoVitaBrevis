@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Categoria, Producto
+from .models import Categoria, Producto , Perfil
 from .forms import UserRegisterForm
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -9,9 +9,11 @@ from django.contrib import messages
 def inicio(request):
     Productos = Producto.objects.all()
     Categorias= Categoria.objects.all()
+    perfil = Perfil.objects.all()
     contexto = {
         "Productos" : Productos,
-        "categoria" : Categorias
+        "categoria" : Categorias,
+        "Perfil" : perfil
     }
     return render(request,'core/Principal.html', contexto)
 
@@ -38,6 +40,7 @@ def login(request):
 def usuario(request):
     categorias= Categoria.objects.all()
     return render(request,'core/usuarios.html',{"cate":categorias})
+
 
 def logout(request):
     return render(request,'core/logout.html')
@@ -66,11 +69,13 @@ def Categorias(request,nombreCategoria):
 def administrador(request):
     Productos = Producto.objects.all()
     categoria = Categoria.objects.all()
-    users = User.objects.all() 
+    users = User.objects.all()
+    perfil = Perfil.objects.all() 
     contexto = {
         "Productos" : Productos,
         "categoria" : categoria,
-        "usuarios" : users
+        "usuarios" : users,
+        "perfil" : perfil
     }
     return render(request,'core/administrador.html',contexto) 
 

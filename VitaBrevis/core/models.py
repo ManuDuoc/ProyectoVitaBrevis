@@ -1,5 +1,6 @@
 from distutils.command.upload import upload
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -29,3 +30,9 @@ class Producto(models.Model):
     def __str__(self):
         texto = "{0} ({1})"
         return texto.format(self.nombre, self.codigo)
+
+class Perfil(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True,null=True)
+    imagen = models.ImageField(upload_to="juegos", null= True)
+    descripcion = models.TextField(null=True,blank=True)
+    masinfo = models.TextField(blank=True,null=True,verbose_name = 'Mas Informacion del Juego 1')
