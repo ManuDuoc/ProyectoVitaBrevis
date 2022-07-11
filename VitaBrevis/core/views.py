@@ -93,6 +93,11 @@ def anadirjuego(request):
     contexto = {"categoria_m":categorias}
     return render(request,'core/anadirjuego.html',contexto)
 
+def anadirPerfil(request):
+    usuario = User.objects.all() #me trae todos los registros de esa tabla (select * from)
+    contexto = {"usuario":usuario}
+    return render(request,'core/editarPerfil.html',contexto)
+
 def Juego(request, codigo):
     producto = Producto.objects.get(codigo=codigo)
     cate = Categoria.objects.all()
@@ -110,6 +115,26 @@ def listar_Categoria(request):
     categorias = Categoria.objects.all() #me trae todos los registros de esa tabla (select * from)
     return render(request,'core/anadirjuego.html',{"categoria_m":categorias})
 
+def anadirPerfil(request):
+    usuario = User.objects.all() #me trae todos los registros de esa tabla (select * from)
+    contexto = {"usuario":usuario}
+    return render(request,'core/anadirPerfil.html',contexto)
+
+
+def registrarPerfil(request):
+    user = request.POST['txtCodigo']
+    f = request.FILES['file']
+    descripcion = request.POST['txtDescripcion']
+    edad = request.POST['txtEdad']
+    nombre = request.POST['txtNombre']
+    apellido = request.POST['txtApellido']
+    pais = request.POST['pais']
+    sexo = request.POST['Sexo']
+    
+
+    Perfil.objects.create(imagen=f,descripcion=descripcion ,user_id=user,apellido=apellido, edad=edad ,  estado=sexo, nombre=nombre,   pais=pais )
+    messages.success(request,'Perfil Registrado')
+    return redirect('usuario')
 
 def registrarjuego(request):
     codigo = request.POST['txtCodigo']
@@ -137,6 +162,45 @@ def eliminarJuego(request, codigo):
     messages.success(request,'Juego Eliminado')
     return redirect('listajuegos')
     
+def edicionJuegos(request, codigo):
+    producto = Producto.objects.get(codigo=codigo)
+    categorias = Categoria.objects.all()
+    contexto = {
+        "produc" : producto,
+        "categoria" : categorias
+    }
+    return render(request,"core/edicionJuegos.html",contexto)
+
+def edicionPerfil(request):
+    usuario = User.objects.all() #me trae todos los registros de esa tabla (select * from)
+    contexto = {"usuario":usuario}
+    return render(request,'core/editarPerfil.html',contexto)
+
+
+def editarPerfil(request):
+    user = request.POST['txtCodigo']
+    descripcion = request.POST['txtDescripcion']
+    edad = request.POST['txtEdad']
+    nombre = request.POST['txtNombre']
+    apellido = request.POST['txtApellido']
+    pais = request.POST['pais']
+    sexo = request.POST['Sexo']
+    produc = Perfil.objects.get(user_id=user)
+    if(request.FILES.get("file")):
+        f = request.FILES["file"]
+        produc.imagen = f
+
+
+    produc.user_id = user
+    produc.nombre = nombre
+    produc.apellido = apellido
+    produc.edad = edad
+    produc.estado = sexo
+    produc.descripcion = descripcion
+    produc.pais = pais
+    produc.save()
+    messages.success(request,'Perfil editado')
+    return redirect('usuario')
 
 def edicionJuegos(request, codigo):
     producto = Producto.objects.get(codigo=codigo)

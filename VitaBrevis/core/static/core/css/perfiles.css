@@ -19,6 +19,11 @@
     color: #161515;
     height: 98%;
 }
+
+
+.p{
+    color: #161515 !important;
+}
 .sidebar a{
     margin-left: 10px;
     display: block;
@@ -70,7 +75,7 @@
 }
 
 .inicio{
-    margin-top: 300px;
+    margin-top: 10px;
     margin-right: 20px !important;
 }
 
@@ -83,6 +88,31 @@
     position: relative;
     font-weight: 400;
     display: block;
+}
+
+.editar{
+    margin-top: 10px;
+    margin-right: 20px !important;
+}
+
+.editar {
+    padding: 10px;
+    margin-left: 10px;
+    line-height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    position: relative;
+    font-weight: 400;
+    display: block;
+}
+
+.editar:hover{
+    margin-left: 35px;
+}
+
+.editar span{
+    margin-top: 100px;
+    margin-left: 10px;
 }
 
 .salir {
@@ -113,6 +143,10 @@
     margin-left: 35px;
 }
 
+
+.salir:last-child{
+    position: relative;
+}
 .inicio span{
     margin-top: 100px;
     margin-left: 10px;

@@ -140,20 +140,20 @@
                         {% for i in perfil %}
 
                         <div class="profile-photo">
-                            {% if user.perfil.imagen %}
+                            {% if i.imagen%}
                             <img src="{{i.imagen.url}}" alt="foto del usuario">
                             {% else %}
                                 sin imagen
                             {% endif %}</a>
                             
+                            
                         </div>
-                        {% endfor %}
-                        {% for i in usuarios %}
+                        
                         
                         <div class="message">
-                            <p><b>{{i.username}}</b> Se Ha Registrado exitosamente
+                            <p><b>{{i.user.username}}</b> Se Ha Registrado exitosamente
                             </p>
-                            <small class="text-muted">El {{i.date_joined}}</small>
+                            <small class="text-muted">El {{i.user.date_joined}}</small>
                             </div>
                         </div>
                         {% endfor %}

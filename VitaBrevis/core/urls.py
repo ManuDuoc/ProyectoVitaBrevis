@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
-from .views import inicio, usuario, registro, administrador,anadirjuego,listajuegos,registrarjuego,eliminarJuego,edicionJuegos,editarjuego,inicios,Juego,Categorias,Usuarios,eliminarUsuario
+from .views import inicio, registrarPerfil, usuario, registro, administrador,anadirjuego,listajuegos,registrarjuego,eliminarJuego,edicionJuegos,editarjuego,inicios,Juego,Categorias,Usuarios,eliminarUsuario,anadirPerfil,registrarPerfil,edicionPerfil,editarPerfil
 
 urlpatterns = [
     path('', inicio,name="Principal"),
@@ -12,14 +12,18 @@ urlpatterns = [
     path('anadirjuego',anadirjuego,name='anadirjuego'),
     path('listajuegos',listajuegos,name='listajuegos'),
     path('registrarjuego/',registrarjuego,name='registrarjuego'),
+    path('registrarPerfil/',registrarPerfil,name='registrarPerfil'),
     path('eliminarJuego/<codigo>',eliminarJuego,name='eliminarJuego'),
     path('edicionJuegos/<codigo>',edicionJuegos,name='edicionJuegos'),
     path('editarjuego/',editarjuego,name='editarjuego'),
+    path('editarPerf/',editarPerfil,name='editarPerfil'),
     path('inicio',inicios,name="inicio"),
     path('Juegos/<codigo>',Juego,name='Juego'),
     path('Categoria/<nombreCategoria>',Categorias,name='Juego'),
     path('listaUsuarios',Usuarios,name='listaUsuarios'),
     path('eliminarUsuario/<id>',eliminarUsuario,name='eliminarUsuario'),
+    path('anadirPerfil',anadirPerfil,name='anadirPerfil'),
+    path('editarPerfil',edicionPerfil,name='edicionPerfil'),
 
 
     path('registro', registro,name="registro"),

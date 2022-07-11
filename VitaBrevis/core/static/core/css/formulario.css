@@ -1,0 +1,7 @@
+#txtCodigo{
+    max-width: 100%;
+}
+select{
+    width: 100% !important;
+    min-width: 50px;
+}
