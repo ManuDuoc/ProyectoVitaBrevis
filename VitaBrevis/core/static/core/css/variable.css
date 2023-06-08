@@ -1,5 +1,106 @@
+:root {
+   --color-primary:  rgb(22, 21, 21);
+   --color-danger: #ee2838;
+   --color-success: #41f1b6;
+   --color-warning: #ffbb55;
+   --color-white: #fff;
+   --color-info-dark: #7d8da1;
+   --color-info-light: #dce1eb;
+   --color-dark: #363949;
+   --color-light: rgba(132,139,200, 0.18);
+   --color-primary-variant: #111e88;
+   --color-dark-variant: #677483;
+   --color-background: #212529;
+   --color-icono:rgb(241, 224, 224);
+   --color-body:#161515;
+ 
+   --card-border-radius: 2rem;
+   --border-radius-1: 0.4rem;
+   --border-radius-2: 0.8rem;
+   --border-radius-3: 1.2rem;
+ 
+   --card-padding: 1.8rem;
+   --padding-1: 1.2rem;
+ 
+   --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* --------------------- VARIEABLES OSCURAS -------------------------- */
+.dark-theme-variables{
+   --color-primary: #25c078;
+   --color-background: #1e573c;
+   --color-white: #0f1011;
+   --color-dark: #edeffd;
+   --color-icono: #161515;
+   --color-light: rgba(0,0,0,0.4);
+   ---box-shadow: 0 2rem 3rem blue;
+   --color-body: white;
+   
+}
+
+.theme-toggler {
+   background: var(--color-light);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 1.6rem;
+   width: 4.2rem;
+   cursor: pointer;
+   border-radius: var(--border-radius-1);
+   margin-top: 0.5rem;
+   margin-left: 13px;
+}
+
+.color{
+   display: flex;
+   gap: 0.5rem;
+   margin-top: 10px;
+}
+
+.theme-toggler span{
+   font-size: 1.2rem;
+   width: 50%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.theme-toggler span.active{
+   background: var(--color-primary);
+   color: white;
+   border-radius: var(--border-radius-1);
+}
+
+.theme-toggler2 {
+   background: var(--color-light);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 1.6rem;
+   width: 3.2rem;
+   cursor: pointer;
+   border-radius: var(--border-radius-1);
+   margin-left: 1.3rem;
+}
+
+.theme-toggler2 span{
+   font-size: 1.2rem;
+   width: 50%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.theme-toggler2 span.active{
+   background: var(--color-primary);
+   color: white;
+   border-radius: var(--border-radius-1);
+}
+
 body{
-   background-color: rgb(22, 21, 21);
+   background-color:var(--color-primary);
    
 }
 h1{
@@ -16,12 +117,12 @@ img.d-block{
 }
 
 .card-ini{
-   background-color: #212529;
+   background-color: var(--color-background);
 }
 
 .pie-pagina{
    width: 100%;
-   background-color: #212529;
+   background-color: var(--color-background);
 }
 .pie-pagina .grupo-1{
    width: 100%;
@@ -43,12 +144,12 @@ img.d-block{
    width: 250px;
 }
 .pie-pagina .grupo-1 .box h2{
-   color: white;
+   color: var(--color-white);
    margin-bottom: 25;
    font-size: 20px;
 }
 .pie-pagina .grupo-1 .box p{
-   color: #efefef;
+   color:  var(--color-white);
    margin-bottom: 10px;
 }
 .pie-pagina .grupo-1 .red-social a{
@@ -58,9 +159,9 @@ img.d-block{
    height: 40px;
    line-height: 40px;
    justify-content: center;
-   color: white;
+   color:  var(--color-white);
    margin-right: 10px;
-   background-color: rgb(22, 21, 21);
+   background-color: var(--color-primary);
    text-align: center;
    transition: all 300ms ease;
 }
@@ -71,42 +172,31 @@ img.d-block{
    background-color: #3a434b;
    padding: 15px 10px;
    text-align: center;
-   color: white;
+   color:  var(--color-white);
 }
 
 
 h1{
-   color: white;
+   color:  var(--color-white);
    margin-top: 60px;
 }
 
 h6{
-   color: white;
+   color: var(--color-white);
 }
-
-
-
-
-
-
-
-
-
-.link-muted { color: rgb(255, 255, 255); } .link-muted:hover { color: #1266f1; }
+.link-muted { color: var(--color-white); } .link-muted:hover { color: #1266f1; }
 
 p{
-   color: white;
+   color: var(--color-white);
 }
 
 summary{
-   color: white;
+   color: var(--color-white);
 }
 
 h4{
-   color: white;
+   color: var(--color-white);
 }
-
-
 .esp{
    margin-top: 100px;
 }
@@ -119,8 +209,6 @@ h4{
       padding: 35px 0px;
    }
 }
-
-
 
 .galeria-port{
    display: inline-flex;
@@ -183,6 +271,13 @@ h4{
    overflow: hidden;
 }
 
+@media screen and (max-width:990px){
+   .color{
+      left: 0;
+      gap: 0rem;
+   }
+}
+
 @media screen and (max-width:523px){
    
    .card-ini{
@@ -202,7 +297,7 @@ h4{
    .card-body{
       height: 100%;
       width: 100%;
-      background-color: #212529;
+      background-color: var(--color-background);
    }
 
    h6.card-title{
