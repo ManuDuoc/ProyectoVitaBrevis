@@ -57,9 +57,12 @@
    margin-top: 10px;
 }
 
+.theme-toggler{
+   width: 100%;
+}
 .theme-toggler span{
    font-size: 1.2rem;
-   width: 50%;
+   width: 40%;
    height: 100%;
    display: flex;
    align-items: center;
@@ -67,33 +70,6 @@
 }
 
 .theme-toggler span.active{
-   background: var(--color-primary);
-   color: white;
-   border-radius: var(--border-radius-1);
-}
-
-.theme-toggler2 {
-   background: var(--color-light);
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   height: 1.6rem;
-   width: 3.2rem;
-   cursor: pointer;
-   border-radius: var(--border-radius-1);
-   margin-left: 1.3rem;
-}
-
-.theme-toggler2 span{
-   font-size: 1.2rem;
-   width: 50%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.theme-toggler2 span.active{
    background: var(--color-primary);
    color: white;
    border-radius: var(--border-radius-1);

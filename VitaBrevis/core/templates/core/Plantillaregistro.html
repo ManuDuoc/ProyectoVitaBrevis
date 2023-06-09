@@ -13,8 +13,12 @@
     <link rel="stylesheet" href="{% static 'core/css/estilos2.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/style2.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/normalize.css' %}">
-    <link rel="shortcut icon" href="{% static 'core/img/icono-removebg-preview.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'core/img/icono-game.png' %}" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--google material icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     <title>Registro</title>
 </head>
 
@@ -22,7 +26,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href=""><img src="{% static 'core/img/icono-removebg-preview.png' %}" width="70" alt=""></a>
+            <a class="navbar-brand" href=""><img src="{% static 'core/img/icono-game.png' %}" width="70" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,6 +44,12 @@
                         <li><a class="dropdown-item" href="{% url 'registro' %}">Registrate</a></li>
                         <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesion</a></li>
                     </ul>
+                    <li class="nav-item">
+                        <div class="theme-toggler">
+                            <span class="material-icons-sharp active">dark_mode</span>
+                            <span class="material-icons-sharp ">light_mode</span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -61,7 +71,7 @@
         <div class="box">
         <figure>
             <a href="#">
-            <img src="{% static 'core/img/icono-removebg-preview.png' %}" alt="icono de la pagina">
+            <img src="{% static 'core/img/icono-game.png' %}" alt="icono de la pagina">
             </a>
         </figure>
         </div>
@@ -80,13 +90,13 @@
         </div>
         <div class="box" style="margin-top: 8px;">
             <h2>Sobre nosotros:</h2>
-            <p>Somos una pagina la cual vende Keys a un precio mas razonable de lo que las puedes encontrar en cualquier otro sitio.</p>
+            <p>Somos una pagina la cual vende juegos a un precio mas razonable de lo que las puedes encontrar en cualquier otro sitio.</p>
             <p>Somos 2 alumnos de Ingenieria en Informática .</p>
         </div>
     </div>
     </div>
     <div class="grupo-2">
-        <small>&copy; 2022 <b>Vita Brevis</b> - Todos los Derechos Reservados</small>
+        <small>&copy; 2022 <b>Game4Ever</b> - Todos los Derechos Reservados</small>
     </div>
 </footer>
     
@@ -94,5 +104,6 @@
     <script src="{% static 'core/js/valid.js' %}"></script>
     <script src="{% static 'core/js/script.js' %}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCJiBdUqpAFEjiHSFVqWt-uBfkPeioang&callback=iniciarMap"></script>
+    <script src="{% static 'core/js/cambiocolor.js'%}"></script>
     </body>
 </html>
