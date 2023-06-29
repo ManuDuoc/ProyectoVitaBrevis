@@ -17,6 +17,17 @@ def inicio(request):
     }
     return render(request,'core/Principal.html', contexto)
 
+
+def compra(request):
+    Productos = Producto.objects.all()
+    Categorias= Categoria.objects.all()
+    perfil = Perfil.objects.all()
+    contexto = {
+        "Productos" : Productos,
+        "categoria" : Categorias,
+        "Perfil" : perfil
+    }
+    return render(request,'core/compra.html', contexto)
 def PS5(request):
     return render(request,'core/PS5.html')
 

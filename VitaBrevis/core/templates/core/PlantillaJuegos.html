@@ -80,7 +80,16 @@
                   {% block Precio %}
                   {% endblock Precio %}
                 </div>  
+                <div class="añadir">
+
+                  <button2 type="button" style="width: 150px;" class="btn btn-outline-light">añadir al carro</button>
+                </div>
   
+                <div class="comprar">
+                  {% block Comprar %}
+                  {% endblock Comprar %}
+                  <a href="{% url 'compra' %}" style="width: 150px;" class="btn btn-outline-light">Comprar</a>
+                </div>
 
                 </div>
             </div>
