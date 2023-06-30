@@ -88,7 +88,8 @@
           <div class="w3-card-4">
 
               <header class="w3-container w3-green">
-                  <h1>Comprar</h1>
+                  <h1>Comprar {{ Productos.nombre }}</h1>
+                  <h1>${{Productos.precio}}</h1>
               </header>
 
               <div class="w3-container">
@@ -113,7 +114,7 @@
                                   description: 'Nombre del producto',
                                   purchase_units: [{
                                       amount: {
-                                          value: '50'
+                                          value: '{{ total }}'
                                       }
                                   }]
                               });

@@ -24,7 +24,7 @@ urlpatterns = [
     path('eliminarUsuario/<id>',eliminarUsuario,name='eliminarUsuario'),
     path('anadirPerfil',anadirPerfil,name='anadirPerfil'),
     path('editarPerfil',edicionPerfil,name='edicionPerfil'),
-    path('compra',compra,name='compra'),
+    path('compra/<int:valor>/',compra,name='compra'),
 
 
     path('registro', registro,name="registro"),

@@ -18,14 +18,17 @@ def inicio(request):
     return render(request,'core/Principal.html', contexto)
 
 
-def compra(request):
-    Productos = Producto.objects.all()
+def compra(request, valor):
+    Productos =  Producto.objects.get(precio=valor)
     Categorias= Categoria.objects.all()
     perfil = Perfil.objects.all()
+    total = round(valor /800) 
     contexto = {
         "Productos" : Productos,
         "categoria" : Categorias,
-        "Perfil" : perfil
+        "Perfil" : perfil,
+        "valor_producto": valor,
+        "total": total
     }
     return render(request,'core/compra.html', contexto)
 def PS5(request):

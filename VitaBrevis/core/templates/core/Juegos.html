@@ -30,7 +30,7 @@
 {% endblock Precio %}
 
 {% block Comprar %}
-
+<a href="{% url 'compra' valor=produc.precio %}" style="width: 150px;" class="btn btn-outline-light">Comprar</a>
 {% endblock Comprar %}
 {% block Video %}
 <iframe src= {{produc.video}} title="YouTube video" allowfullscreen></iframe>
